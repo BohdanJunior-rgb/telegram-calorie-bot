@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Фітнес Раціон</title>
+  <link rel="stylesheet" href="style.css">  
+</head>
+<body>
+<div id="mealPopup" class="popup-container is-hidden">
+  <div class="popup-content">
+    <h3>🔁 Обери іншу страву</h3>
+    <div id="mealOptionsList" class="meal-options-wrapper"></div>
+    <button onclick="closeMealPopup()">❌ Закрити</button>
+  </div>
+</div>
+
+
+
+  <div class="container">
+    <h1> 🥗Раціон на день   </h1>
+    <div id="form">
+      <label>Стать:</label>
+      <select id="gender">
+        <option value="male">Чоловік</option>
+        <option value="female">Жінка</option>
+>
+      </select>
+
+      <label>Вік:</label>
+      <input class="age-int" type="number" id="age" placeholder="28" autocomplete="off"/>
+
+      <label>Ріст (см):</label>
+      <input class="height-int" type="number" id="height" placeholder="175" autocomplete="off"/>
+
+      <label>Вага (кг):</label>
+      <input class="weight-int" type="number" id="weight" placeholder="70" autocomplete="off"/>
+
+      <label>Рівень активності:</label>
+      <select id="activity">
+        <option value="1.2">Мінімальна</option>
+        <option value="1.375">Легка</option>
+        <option value="1.55">Середня</option>
+        <option value="1.725">Висока</option>
+        <option value="1.9">Дуже висока</option>
+      </select>
+
+      <label>Ціль:</label>
+      <select id="goal">
+        <option value="maintain">Підтримка</option>
+        <option value="lose">Схуднення</option>
+        <option value="gain">Набір ваги</option>
+      </select>
+
+      <button class="btn" onclick="calculateCalories()">Зберегти 🍽️</button>
+    </div>
+
+    <div class="results" id="results"></div>
+
+    <button class="btn" id="playGameBtn">🎮 Вгадати калорії</button>
+    <div id="gameModal" class="modal">
+      <div class="modal-content" id="gameContent"></div>
+    </div>
+  <!-- -------------------------------------------------------------------------------- -->
+   <!-- ось цей дів не можна удаляти !!! -->
+     <!-- -------------------------------------------------------------------------------- -->
+  </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
