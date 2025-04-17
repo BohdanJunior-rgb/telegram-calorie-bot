@@ -21,3 +21,12 @@ bot.launch().then(() => console.log('✅ Бот успішно запущено!
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
 
+const http = require('http');
+const PORT = process.env.PORT || 3000;
+
+http.createServer((req, res) => {
+  res.writeHead(200);
+  res.end('Bot is running!');
+}).listen(PORT, () => {
+  console.log(`🌐 HTTP-сервер запущено на порту ${PORT}`);
+});
